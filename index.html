@@ -30,7 +30,10 @@
   .kpi .k-chg{font-family:var(--mono);font-size:12.5px;margin-top:4px}
   .up{color:var(--green)} .dn{color:var(--red)} .fl{color:var(--sub)}
   .kpi .meter{margin-top:14px;height:8px;border-radius:4px;background:linear-gradient(90deg,#dcfce7 0 30%,#fef3c7 30% 70%,#fee2e2 70% 100%);position:relative}
+  .kpi .meter i{position:absolute;top:-4px;bottom:-4px;width:1px;background:rgba(30,36,48,.45)}
+  .kpi .meter i.z30{left:30%} .kpi .meter i.z70{left:70%} .kpi .meter i.z100{left:calc(100% - 1px)}
   .kpi .meter b{position:absolute;top:-4px;width:4px;height:16px;border-radius:2px;background:var(--ink);transform:translateX(-2px)}
+  .kpi .k-scale{display:flex;justify-content:space-between;font-size:10.5px;color:#9aa5b5;margin-top:5px;font-family:var(--mono)}
   .kpi .k-pos{font-size:12px;color:var(--sub);margin-top:8px;font-family:var(--mono)}
   /* chart + levels */
   .row{display:grid;grid-template-columns:2fr 1fr;gap:14px;margin-top:14px}
@@ -78,29 +81,33 @@
       <div class="k-name">沪深300 PE-TTM <span class="badge bg-amber">🟡 合理</span></div>
       <div class="k-val">13.53</div>
       <div class="k-chg up">▲ 三连升 65.7→68.0</div>
-      <div class="meter"><b style="left:68.0%"></b></div>
+      <div class="meter"><i class="z30"></i><i class="z70"></i><b style="left:68.0%"></b></div>
+      <div class="k-scale"><span>0</span><span>30%</span><span>70%</span><span>100%</span></div>
       <div class="k-pos">历史分位 68.0%</div>
     </div>
     <div class="kpi">
       <div class="k-name">沪深300 PB <span class="badge bg-green">🟢 低估</span></div>
       <div class="k-val">1.34</div>
       <div class="k-chg up">▲ 20.9→22.4 修复中</div>
-      <div class="meter"><b style="left:22.4%"></b></div>
+      <div class="meter"><i class="z30"></i><i class="z70"></i><b style="left:22.4%"></b></div>
+      <div class="k-scale"><span>0</span><span>30%</span><span>70%</span><span>100%</span></div>
       <div class="k-pos">历史分位 22.4%</div>
     </div>
     <div class="kpi">
       <div class="k-name">巴菲特指数 <span class="badge bg-green">🟢 合理带</span></div>
       <div class="k-val">79.59%</div>
       <div class="k-chg dn">▼ -1.46pct 跌破80%</div>
-      <div class="meter"><b style="left:70.0%"></b></div>
+      <div class="meter"><i class="z30"></i><i class="z70"></i><b style="left:70.0%"></b></div>
+      <div class="k-scale"><span>0</span><span>30%</span><span>70%</span><span>100%</span></div>
       <div class="k-pos">历史分位 70.0% · 近10年 64.1%</div>
     </div>
     <div class="kpi">
       <div class="k-name">A股总市值 <span class="badge bg-amber">GDP占比</span></div>
       <div class="k-val">111.58<span style="font-size:15px">万亿</span></div>
       <div class="k-chg fl">GDP 140.19万亿 · 比率79.59%</div>
-      <div class="meter"><b style="left:79.59%"></b></div>
-      <div class="k-pos">100% 以上=玩火区</div>
+      <div class="meter"><i class="z100"></i><b style="left:79.59%"></b></div>
+      <div class="k-scale"><span>0</span><span>50%</span><span>100%</span></div>
+      <div class="k-pos">100% 以上=玩火区（刻度=总市值/GDP）</div>
     </div>
   </div>
 
